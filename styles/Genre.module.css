@@ -1,0 +1,161 @@
+.container {
+	max-width: 1200px;
+	margin: 0 auto;
+	padding: 0 2rem;
+  }
+  
+  .title {
+	font-size: 2.5rem;
+	margin-bottom: 2rem;
+	color: var(--foreground);
+	position: relative;
+	padding-bottom: 1rem;
+	display: inline-block;
+  }
+  
+  .title::after {
+	content: '';
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 60px;
+	height: 4px;
+	background-color: var(--primary);
+	border-radius: 2px;
+  }
+  
+  .genreHeader {
+	margin-bottom: 2.5rem;
+	background-color: var(--card);
+	padding: 2rem;
+	border-radius: var(--radius);
+	border: 1px solid var(--border);
+	box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  }
+  
+  .genreDescription {
+	font-size: 1.1rem;
+	line-height: 1.6;
+	color: var(--muted-foreground);
+	margin-top: 1rem;
+  }
+  
+  .loading {
+	text-align: center;
+	padding: 2rem;
+	font-size: 1.2rem;
+	color: var(--muted-foreground);
+  }
+  
+  .error {
+	text-align: center;
+	padding: 2rem;
+	color: var(--secondary);
+	font-weight: 500;
+  }
+  
+  .moviesList {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+	gap: 1.5rem;
+  }
+  
+  .movieItem {
+	background-color: var(--card);
+	border-radius: var(--radius);
+	border: 1px solid var(--border);
+	overflow: hidden;
+	transition: transform 0.3s ease, box-shadow 0.3s ease;
+	height: 100%;
+  }
+  
+  .movieItem:hover {
+	transform: translateY(-5px);
+	box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  }
+  
+  .movieLink {
+	display: block;
+	padding: 1.5rem;
+	color: var(--foreground);
+	text-decoration: none;
+	height: 100%;
+	transition: color 0.2s ease;
+  }
+  
+  .movieLink:hover {
+	color: var(--primary);
+  }
+  
+  .movieTitle {
+	font-size: 1.3rem;
+	font-weight: 500;
+	margin-bottom: 0.5rem;
+  }
+  
+  .movieYear {
+	color: var(--muted-foreground);
+	font-size: 0.9rem;
+	display: block;
+	margin-top: 0.5rem;
+  }
+  
+  .movieRating {
+	display: inline-block;
+	margin-top: 1rem;
+	padding: 0.35rem 0.75rem;
+	background-color: var(--primary);
+	color: white;
+	border-radius: 20px;
+	font-size: 0.85rem;
+	font-weight: 500;
+  }
+  
+  .backLink {
+	display: inline-flex;
+	align-items: center;
+	margin-bottom: 2rem;
+	color: var(--muted-foreground);
+	text-decoration: none;
+	transition: color 0.2s ease;
+	font-weight: 500;
+  }
+  
+  .backLink:hover {
+	color: var(--primary);
+  }
+  
+  .backLinkIcon {
+	margin-right: 0.5rem;
+  }
+  
+  @media (max-width: 768px) {
+	.container {
+	  padding: 0 1rem;
+	}
+  
+	.title {
+	  font-size: 2rem;
+	}
+  
+	.moviesList {
+	  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+	}
+  
+	.genreHeader {
+	  padding: 1.5rem;
+	}
+  }
+  
+  @media (max-width: 480px) {
+	.moviesList {
+	  grid-template-columns: 1fr;
+	}
+  
+	.movieLink {
+	  padding: 1.25rem;
+	}
+  }

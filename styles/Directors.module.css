@@ -1,0 +1,174 @@
+.container {
+	max-width: 1200px;
+	margin: 0 auto;
+	padding: 0 1rem;
+  }
+  
+  .title {
+	font-size: 2.5rem;
+	margin-bottom: 2rem;
+	text-align: center;
+	color: var(--foreground);
+	position: relative;
+  }
+  
+  .title::after {
+	content: '';
+	position: absolute;
+	bottom: -10px;
+	left: 50%;
+	transform: translateX(-50%);
+	width: 80px;
+	height: 4px;
+	background: linear-gradient(to right, var(--primary), var(--secondary));
+	border-radius: 2px;
+  }
+  
+  .loading {
+	text-align: center;
+	padding: 2rem;
+	font-size: 1.2rem;
+	color: var(--muted-foreground);
+  }
+  
+  .error {
+	text-align: center;
+	padding: 2rem;
+	color: var(--secondary);
+	font-weight: 500;
+  }
+  
+  .directorGrid {
+	display: grid;
+	grid-template-columns: 1fr;
+	gap: 2.5rem;
+  }
+  
+  .directorCard {
+	background-color: var(--card);
+	border-radius: var(--radius);
+	border: 1px solid var(--border);
+	overflow: hidden;
+	transition: transform 0.3s ease, box-shadow 0.3s ease;
+	padding: 2rem;
+	box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  }
+  
+  .directorCard:hover {
+	transform: translateY(-5px);
+	box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  }
+  
+  .directorName {
+	font-size: 1.8rem;
+	margin-bottom: 0.75rem;
+	color: var(--foreground);
+	position: relative;
+	padding-bottom: 0.75rem;
+	display: inline-block;
+  }
+  
+  .directorName::after {
+	content: '';
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 40px;
+	height: 3px;
+	background-color: var(--primary);
+	border-radius: 2px;
+  }
+  
+  .directorBio {
+	font-size: 1rem;
+	line-height: 1.6;
+	margin-bottom: 1.5rem;
+	color: var(--muted-foreground);
+  }
+  
+  .moviesSection {
+	margin-top: 1.5rem;
+  }
+  
+  .moviesTitle {
+	font-size: 1.4rem;
+	margin-bottom: 1rem;
+	color: var(--foreground);
+	display: flex;
+	align-items: center;
+	gap: 0.5rem;
+  }
+  
+  .moviesTitle::before {
+	content: '🎬';
+	font-size: 1.2rem;
+  }
+  
+  .moviesList {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+	gap: 1rem;
+  }
+  
+  .movieItem {
+	background-color: var(--background);
+	border-radius: var(--radius);
+	border: 1px solid var(--border);
+	padding: 0.75rem 1rem;
+	transition: background-color 0.2s ease, transform 0.2s ease;
+  }
+  
+  .movieItem:hover {
+	background-color: var(--primary);
+	transform: translateY(-2px);
+  }
+  
+  .movieItem:hover a {
+	color: white;
+  }
+  
+  .movieLink {
+	color: var(--foreground);
+	text-decoration: none;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	font-weight: 500;
+  }
+  
+  .movieYear {
+	color: var(--muted-foreground);
+	font-size: 0.85rem;
+	transition: color 0.2s ease;
+  }
+  
+  .movieItem:hover .movieYear {
+	color: rgba(255, 255, 255, 0.8);
+  }
+  
+  @media (max-width: 768px) {
+	.title {
+	  font-size: 2rem;
+	}
+  
+	.directorName {
+	  font-size: 1.5rem;
+	}
+  
+	.moviesList {
+	  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+	}
+  }
+  
+  @media (max-width: 480px) {
+	.moviesList {
+	  grid-template-columns: 1fr;
+	}
+	
+	.directorCard {
+	  padding: 1.5rem;
+	}
+  }

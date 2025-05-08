@@ -1,0 +1,165 @@
+.container {
+	max-width: 1200px;
+	margin: 0 auto;
+	padding: 0 2rem;
+  }
+  
+  .title {
+	font-size: 2.5rem;
+	margin-bottom: 2rem;
+	text-align: center;
+	color: var(--foreground);
+	position: relative;
+  }
+  
+  .title::after {
+	content: '';
+	position: absolute;
+	bottom: -10px;
+	left: 50%;
+	transform: translateX(-50%);
+	width: 80px;
+	height: 4px;
+	background: linear-gradient(to right, var(--primary), var(--secondary));
+	border-radius: 2px;
+  }
+  
+  .genreGrid {
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+	gap: 2rem;
+	margin-top: 2rem;
+  }
+  
+  .genreCard {
+	background-color: var(--card);
+	border-radius: var(--radius);
+	border: 1px solid var(--border);
+	overflow: hidden;
+	transition: transform 0.3s ease, box-shadow 0.3s ease;
+	padding: 1.5rem;
+	box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+	height: 100%;
+  }
+  
+  .genreCard:hover {
+	transform: translateY(-5px);
+	box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  }
+  
+  .genreName {
+	font-size: 1.8rem;
+	margin-bottom: 0.75rem;
+	color: var(--foreground);
+	position: relative;
+	padding-bottom: 0.75rem;
+	display: inline-block;
+	transition: color 0.2s ease;
+  }
+  
+  .genreName::after {
+	content: '';
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 40px;
+	height: 3px;
+	background-color: var(--primary);
+	border-radius: 2px;
+  }
+  
+  .genreLink {
+	text-decoration: none;
+  }
+  
+  .genreLink:hover .genreName {
+	color: var(--primary);
+  }
+  
+  .genreDescription {
+	font-size: 1rem;
+	line-height: 1.6;
+	margin-bottom: 1.5rem;
+	color: var(--muted-foreground);
+  }
+  
+  .moviesList {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+  }
+  
+  .movieItem {
+	background-color: var(--background);
+	border-radius: var(--radius);
+	border: 1px solid var(--border);
+	margin-bottom: 0.75rem;
+	transition: background-color 0.2s ease, transform 0.2s ease;
+  }
+  
+  .movieItem:hover {
+	background-color: var(--primary);
+	transform: translateY(-2px);
+  }
+  
+  .movieItem:hover a {
+	color: white;
+  }
+  
+  .movieLink {
+	color: var(--foreground);
+	text-decoration: none;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 0.75rem 1rem;
+	font-weight: 500;
+  }
+  
+  .movieYear {
+	color: var(--muted-foreground);
+	font-size: 0.85rem;
+	transition: color 0.2s ease;
+  }
+  
+  .movieItem:hover .movieYear {
+	color: rgba(255, 255, 255, 0.8);
+  }
+  
+  .loading {
+	text-align: center;
+	padding: 2rem;
+	font-size: 1.2rem;
+	color: var(--muted-foreground);
+  }
+  
+  .error {
+	text-align: center;
+	padding: 2rem;
+	color: var(--secondary);
+	font-weight: 500;
+  }
+  
+  @media (max-width: 768px) {
+	.container {
+	  padding: 0 1rem;
+	}
+  
+	.title {
+	  font-size: 2rem;
+	}
+  
+	.genreGrid {
+	  grid-template-columns: 1fr;
+	}
+  
+	.genreName {
+	  font-size: 1.5rem;
+	}
+  }
+  
+  @media (max-width: 480px) {
+	.genreCard {
+	  padding: 1.25rem;
+	}
+  }
