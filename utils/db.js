@@ -11,7 +11,7 @@ export async function connectDB() {
 	if (db) return db; // Return cached DB if already connected
 
 	try {
-		client = new MongoClient(uri, { useUnifiedTopology: true });
+		client = new MongoClient(uri, { });
 		await client.connect();
 		db = client.db(); // Default DB from URI
 		console.log("MongoDB Connected");
